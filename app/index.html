@@ -1,0 +1,50 @@
+<%
+var website = this.require('./app/articles/website.json');
+%>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title><%= website.meta.title %></title>
+    <meta name="description" content="<%= website.meta.description %>">
+    
+    <link id="wks-css" rel="stylesheet" href="/assets/index.css" />
+    <link rel="import-html" href="assets/includes/meta.inc.html">
+    <link rel="import-html" href="assets/includes/ga.inc.html">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <link rel="import-html" href="assets/includes/logo.inc.html">
+            <link rel="import-html" href="assets/includes/marcopeg.inc.html">
+            <link rel="import-html" href="assets/includes/social-media.inc.html">
+            <link rel="import-html" href="assets/includes/mailchimp.inc.html">
+        </div><!-- // #header -->
+
+        <main id="main">
+            
+            <header class="page-header">
+                <h1>Web Dev <small>made easy</small></h1>
+            </header>
+
+            <!-- Markdown -->
+            > When it comes to write code **you don't need to learn magic spells**.  
+            > All you need is to **take a look outside the window** and solve your problem  
+            > with **patterns from the real world**, where you come from.
+            >
+            > _-- Then you code --_
+            <!-- /Markdown -->
+            
+            <div class="article-list" style="margin-top:4em">
+                <link rel="import-html" params="article:'free-backup-strategies-to-sleep-better'" href="assets/includes/article-item.inc.html">
+                <link rel="import-html" params="article:'you-better-test-to-save-some-rest'" href="assets/includes/article-item.inc.html">
+                <link rel="import-html" params="article:'the-course-of-the-proud-developer'" href="assets/includes/article-item.inc.html">
+            </div>
+
+
+        </main>
+    </div>
+    <link rel="import-html" href="assets/includes/credits.inc.html">
+</body>
+</html>

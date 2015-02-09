@@ -1,0 +1,51 @@
+/**
+ * noBlackMagic.com - Mobile First Layout
+ * @author: Marco Pegoraro
+ */
+
+@import "less/lesshat.less";
+@import "less/config.less";
+
+@import "less/font-lato.embed.less";
+
+@import "less/mobile.less";
+
+@media screen and (min-width: 720px) {
+	@import "less/tablet.less";
+}
+
+@media screen and (min-width: 1024px) {
+	@import "less/desktop.less";
+}
+
+
+.squared-img {
+    text-align: center;
+    
+    & > img {
+        width: 160px;
+        height: auto;
+        margin: 0 auto 2em;
+        box-shadow: 3px 3px 5px #666;
+    }
+    
+    &.borderless > img {
+        box-shadow: none;
+    }
+}
+
+.rounded-img {
+    text-align: center;
+    
+    & > img {
+        width: 160px;
+        height: auto;
+        margin: 0 auto 2em;
+        border-radius:100%;
+        box-shadow: 3px 3px 5px #666;
+    }
+    
+    &.borderless > img {
+        box-shadow: none;
+    }
+}

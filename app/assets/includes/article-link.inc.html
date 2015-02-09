@@ -1,0 +1,2 @@
+<% var article = this.require('./app/articles/' + this.params.article + '.json'); %>
+<a href="/articles/<%= article.url %>.html" title="<%= article.meta.title %>">&raquo; <%= article.title %></a>

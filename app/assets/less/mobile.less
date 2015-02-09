@@ -1,0 +1,461 @@
+
+
+
+/**
+ * Reset
+ */
+
+h1, h2, h3, h4, h5, h6, p, ul {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Utility
+ */
+
+.block {
+	display: block;
+}
+
+.clearfix {
+	&:after {
+	    display: block;
+	    content: ' ';
+	    clear: both;
+	}
+}
+
+.left {
+	float: left;
+}
+
+
+html, body {
+	margin: 1% 0;
+	padding:0;
+	
+	font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: @textColor;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: @titleColor;
+	margin-bottom: .3em;
+
+	small {
+		color: @textColor;	
+		font-weight: normal;
+		font-size: 0.7em;
+	}
+}
+
+p, ul {
+	margin-bottom: @verticalMargin;
+	font-size: 1.2em;
+}
+
+a {
+	color: @linkColor;
+	text-decoration: none;
+	padding: 0 5px;
+
+	&:hover {
+		background-color: @linkColor;
+		color: #fff;
+		border-radius: @borderRadius / 2;
+	}
+}
+
+strong {
+	color: darken(@textColor, 10%);
+}
+
+em {
+	color: darken(@textColor, 30%);
+}
+
+ul {
+	list-style-position: outside;
+	margin-left: 1.3em;
+
+	li a:first-child {
+		padding-left: 0;
+	}
+
+	ul {
+		font-size: 1em;
+		margin-left: 1.3em;
+		margin-bottom: 0;
+	}
+}
+
+code {
+	color: darken(@textColor, 10%);
+	font-size: 0.9em;
+	padding: 0 5px;
+}
+
+pre {
+	.block;
+	margin-bottom: @verticalMargin;
+	width: 100%;
+	overflow: auto;
+	
+	background: #f8f8f8;
+	text-shadow: 0 1px #fff;
+
+	border: 1px solid darken(@borderColor, 10%);
+	border-radius: @borderRadius;
+
+	code {
+		.block;
+		margin: 10px;
+		font-size: 1.1em;
+	}
+}
+
+blockquote {
+	margin: 10px;
+	margin-left: 0;
+	padding: 10px;
+	border-left: 5px solid @borderColor;
+	font-style: italic;
+	font-size: 0.9em;
+
+	& p:last-child {
+		margin-bottom:0;
+	}
+}
+
+section {
+	border: 1px solid darken(@borderColor, 20%);
+	padding: @verticalMargin;
+	padding-bottom: 0;
+	margin-top: @verticalMargin * 3;
+	margin-bottom: @verticalMargin * 3;
+}
+
+
+#wrapper, #header, #main {
+	.block;
+}
+
+#wrapper {
+	width: 96%;
+	margin:0 auto;
+}
+
+#header {
+	margin-bottom: 80px;
+}
+
+#credits {
+	background: @backgroundColor;
+	margin-top: 40px;
+	padding: 40px 0;
+	text-align: center;
+}
+
+/**
+ * NoBlackMagic Logo
+ */
+
+#logo {
+	.block;
+	padding-bottom: 4px;
+
+	font-size: .7em;
+	line-height: 2.2em;
+	text-decoration:none;
+	color: @titleColor;
+	
+	img {
+		.left;
+	}
+	
+	h1 {
+		.left;
+		padding: 15px 0 0 10px;
+	}
+
+	small {
+		.block;
+		font-weight: normal;
+	}
+
+	&:hover {
+		background: none;
+	}
+}
+
+
+/**
+ * Simple Navigation Menu
+ */
+
+.menu {
+	
+	margin: 2em auto;
+	
+	h2 {
+		padding: 0 10px;
+		font-size: 1.3em;
+		background: @backgroundColor;
+		border-radius: @borderRadius;
+		text-shadow: 0 1px #fff;
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding: 5px 0;
+	}
+
+	li {
+		line-height: 1.7em;
+		font-size: 0.85em;
+	}
+
+	a {
+		.block;
+		padding: 0 10px;
+	}
+
+	a:first-child {
+		padding-left: 10px;
+	}
+
+}
+
+.page-header {
+	padding: 15px 0 5px 0;
+	margin-bottom: 45px;
+	border-bottom: 1px solid @borderColor;
+
+	h1, h2, h3 {
+		font-size: 1.8em;
+		margin: 0;
+	}
+
+	small {
+		padding-left: 0.5em;
+		font-size: 1em;
+		font-weight: normal;
+	}
+}
+
+.code-block {
+	.block;
+	margin-bottom: @verticalMargin;
+	border: 2px solid @titleColor;
+	border-radius: @borderRadius;
+
+	h2, h3 {
+		padding: 5px 15px;
+		margin-bottom: 0;
+		background: @titleColor;
+		color: #fff;
+	}
+
+	pre {
+		margin: 0;
+		margin-bottom: 0;
+		border: none;
+	}
+}
+
+.author-box {
+
+	.clearfix;
+	margin-bottom: @verticalMargin;
+	padding: 10px;
+	background: @borderColor;
+	border-radius: @borderRadius;
+
+	img {
+		.left;
+		max-width: 100px;
+		margin: 5px 10px 10px 0;
+	}
+
+	ul {
+		.block;
+		margin-bottom: 0;
+		
+		list-style:none;
+		text-align: center;
+	}
+
+	li {
+		display: inline;
+		&:before {
+			content: "|";
+			padding-right: 8px;
+			color: #444;
+			font-size: 14px;
+		}
+		&:first-child:before {
+			display: none;
+		}
+	}
+
+	#header & {
+		font-size: 0.8em;
+		img {
+			max-width: 70px;
+		}
+	}
+
+}
+
+.social-media {
+	
+	margin: @verticalMargin auto;
+
+	ul {
+		margin: 0;
+		list-style: none;
+		list-style-type: inside;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+
+		.transition(transform .2s ease-in);
+
+		&:hover {
+			.scale(1.5);
+		}
+	}
+
+	a:hover {
+		background: none;
+	}
+
+	#header & img {
+		width: 32px;
+	}
+
+	#main & {
+		margin: (@verticalMargin * 6) auto;
+		img {
+			width: 50px;
+		}
+	}
+
+}
+
+.jsbox {
+	margin: @verticalMargin auto;
+
+	.code-block & {
+		margin: 0;
+		border-radius: 0;
+		border: none;
+	}
+}
+
+
+
+.article-item {
+	margin-bottom: @verticalMargin * 4;
+
+	@innerColor: lighten(@textColor, 0%);
+
+	.after() {
+		content: " ";
+		display: block;
+		width: 60%;
+		margin: auto;
+		border-bottom: 1px dashed @innerColor;
+	}
+
+	&:after {
+		.after;
+		margin-top: 4em;
+
+		.article-list & {
+			display:none;		
+		}
+	}
+
+	header {
+		text-align: center;
+
+		a {
+			background: none;
+		}
+
+		h1 {
+			margin-bottom: @verticalMargin / 3;
+			line-height: 1em;
+		}
+
+		h2 {
+			font-size: 0.9em;
+			color: @innerColor;
+			line-height: 1.3em;
+
+			small {
+				font-size: 1em;
+			}
+		}
+
+		&:after {
+			.after;
+			width: 55px;
+			margin: @verticalMargin auto;
+			border-bottom: 1px solid @innerColor;
+
+			.article-list & {
+				display:none;
+			}
+		}
+	}
+
+	footer {
+		text-align: center;
+		margin-top: 0 - (@verticalMargin / 2);
+		margin-bottom: @verticalMargin;
+
+		.article-list & {
+			margin-top: @verticalMargin / 2;
+		}
+	}
+}
+
+.read-more {
+	position: relative;
+	display: inline-block;
+	padding: 3px 25px 6px 10px;
+	background: @borderColor;
+	
+	color: contrast(@borderColor);
+	border-radius: 20px;
+
+	&:hover {
+		text-shadow: none;
+	}
+
+	&:before {
+		content: "»";
+		position: absolute;
+		top: 50%;
+		right: 5px;
+
+		margin-top: -5px;
+
+		font-weight: normal;
+		font-size: 40px;
+		line-height: 0;
+
+		color: #666;
+	}
+
+	&:hover:before {
+		color: #fff;
+	}
+}
